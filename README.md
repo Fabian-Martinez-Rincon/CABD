@@ -2,8 +2,8 @@
 
 Conceptos y Aplicaciones de Big Data
 
-- [Practica 1 Paradigma MapReduce](#practica-1)
-- [Practica 2](#practica-2)
+- [Practica 1 Paradigma MapReduce](#practica-1-paradigma-mapreduce)
+- [Practica 2 Hadoop MapReduce](#practica-2-hadoop-mapreduce)
 - [Practica 3](#practica-3)
 - [Practica 4](#practica-4)
 - [Practica 5](#practica-5)
@@ -12,7 +12,7 @@ Conceptos y Aplicaciones de Big Data
 
 ---
 
-## Practica 1
+## Practica 1 Paradigma MapReduce
 
 #### Ejercicio 1
 
@@ -143,7 +143,53 @@ Si contáramos con un cluster donde podemos configurar 100 nodos para la tarea d
 
 ---
 
-## Practica 2
+## Practica 2 Hadoop MapReduce
+
+#### Ejercicio 1
+
+¿En el dataset del ejercicio 1 de la práctica 1 indique para cada Job, si se vería beneficiado por una función combiner? En caso afirmativo, ¿cuál es la implementación de dicha función? ¿Qué datos recibe cada reduce, al utilizar la función combiner?
+
+#### Ejercicio 2
+
+Implemente una función combiner para el problema del WordCount.
+
+#### Ejercicio 3
+
+Implemente un job MapReduce para calcular el máximo, mínimo, promedio y desvío stándard de las ocurrencias de todas las palabras del dataset Libros.
+
+
+#### Ejercicio 4
+
+Utilice el dataset Libros para implementar una aplicación MapReduce que devuelva como salida todos los párrafos que tienen una longitud mayor al promedio.
+
+
+#### Ejercicio 5
+
+El dataset website tiene información sobre el tiempo de permanencia de sus usuarios en cada una de las páginas del sitio. El formato de los datos del dataset es:
+
+```html
+<id_user, id_page, time>
+```
+
+Implemente una aplicación MapReduce, utilizando combiners en los casos que
+considere necesario, que calcule
+
+- `a)` La página más visitada (la página en la que más tiempo permaneció) para cada usuario
+- `b)` El usuario que más páginas distintas visitó
+- `c)`. La página más visitada (en cuanto a cantidad de visitas, sin importar el tiempo de permanencia) por todos los usuarios.
+
+Indique como queda el DAG del proceso completo (las tres consultas)
+
+
+#### Ejercicio 6
+
+
+#### Ejercicio 7
+
+
+#### Ejercicio 8
+
+
 
 ---
 
