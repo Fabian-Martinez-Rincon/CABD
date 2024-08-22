@@ -1,4 +1,3 @@
-# Crear el dataset en una estructura tipo lista de diccionarios
 dataset = [
     {"key": 34, "value": 21},
     {"key": 21, "value": 34},
@@ -18,7 +17,6 @@ dataset = [
     {"key": 19, "value": 35},
 ]
 
-# Si prefieres un archivo CSV, puedes usar este código para guardarlo
 import csv
 
 with open('dataset.csv', mode='w', newline='') as file:
