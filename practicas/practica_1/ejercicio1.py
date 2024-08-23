@@ -76,7 +76,7 @@ def reduceE(k2, v2, context):
 def ejercicio1_run():
     input_path, output, intermediate = process_folder("ejercicio1A")
     
-    job = MRE.Job(input_path, output, mapE, reduceE)
+    job = MRE.Job(input_path, output, mapC, reduceC)
     job.setIntermDir(intermediate)
     job.waitForCompletion()
     

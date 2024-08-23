@@ -1,0 +1,16 @@
+P1	Acción	9
+P2	Drama	4
+P3	Terror	8
+P4	Drama	5
+P5	Acción	7
+P6	Comedia	9
+P7	Drama	6
+P8	Acción	8
+P9	Comedia	7
+P10	Acción	7
+P11	Terror	8
+P12	Drama	4
+P13	Acción	8
+P14	Acción	9
+P15	Terror	5
+P16	Drama	6
