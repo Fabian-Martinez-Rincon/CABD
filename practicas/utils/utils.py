@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import chardet
 
 def process_folder(name):
     PATH_BASE = Path(__file__).resolve().parent.parent.parent
@@ -21,18 +22,28 @@ def process_folder(name):
     create_directories(output_path, intermediate_path)
     return input_path, output_path, intermediate_path
 
-def display_final_output(output_directory):
-    """
-    Reads and prints the contents of 'output.txt' from the specified output directory.
+def detect_encoding(file_path):
+    with open(file_path, 'rb') as file:
+        raw_data = file.read()
+        result = chardet.detect(raw_data)
+        return result['encoding']
 
-    Args:
-    output_directory (str): The directory where 'output.txt' is located.
-    """
+def display_final_output(output_directory):
     output_file_path = os.path.join(output_directory, "output.txt")
     try:
-        with open(output_file_path, "r", encoding="utf-8") as file:
-            print("Final output:")
-            print(file.read())
+        encoding = detect_encoding(output_file_path)
+        print(f"Codificación detectada: {encoding}")
+
+        try:
+            with open(output_file_path, "r", encoding=encoding) as file:
+                print("Final output:")
+                print(file.read())
+        except UnicodeDecodeError:
+            print(f"Error con la codificación {encoding}. Reintentando con 'ISO-8859-1'.")
+            with open(output_file_path, "r", encoding="ISO-8859-1") as file:
+                print("Final output:")
+                print(file.read())
+
     except FileNotFoundError:
         print(f"Error: No se pudo encontrar el archivo en {output_file_path}")
     except Exception as e:
